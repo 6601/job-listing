@@ -1,7 +1,8 @@
 class Admin::JobsController < ApplicationController
 	before_action :authenticate_user!,only:[:new,:create,:update,:edit,:destroy]
-	before_action :set_admin_job,only:[:show,:edit,:update,:destroy]
+	before_action :set_admin_job,only:[:show,:edit,:update,:destroy,:publish,:hide]
 	before_action :require_is_admin
+	layout "admin"
 
 	def index
 		@jobs =Job.all.recent
@@ -43,6 +44,18 @@ class Admin::JobsController < ApplicationController
 		else
 			render :edit
 		end
+		
+	end
+
+	def publish
+		@job.publish!
+		redirect_to :back
+		
+	end
+
+	def hide
+		@job.hide!
+		redirect_to :back
 		
 	end
 
