@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: resumes
+# Table name: posts
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
-#  job_id     :integer
-#  content    :text
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  attachment :string
 #
 
 require 'test_helper'
 
-class ResumeTest < ActiveSupport::TestCase
+class PostTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
