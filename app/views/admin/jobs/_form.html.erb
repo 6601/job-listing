@@ -1,0 +1,13 @@
+<%= simple_form_for [:admin, @job ] do |f| %>
+
+<%= f.input :title ,label:'职位名称',error:'职位名称不得为空'%>
+<%= f.input :description ,label:'岗位要求',error:'岗位要求不得为空'%>
+<%= f.input :wage_lower_bound,label:'最低工资',error:'最低工资不得为空'%>
+<%= f.input :wage_upper_bound,label:'最高工资',error:'最高工资不得为空'%>
+<%= f.input :contact_email,label:'电子邮件',error:'电子邮件不得为空',placehoder:'user@qq.com'%>
+<%= f.input :contact_phone,label:'联系电话',error:'联系电话不得为空'%>
+<%= f.input :contact_address,label:'地址',error:'地址不得为空'%>
+<%= f.input :is_hidden %>
+
+  <%= f.submit "发布" ,class:'btn btn-primary'%>
+<% end %>
